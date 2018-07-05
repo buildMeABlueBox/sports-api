@@ -52,7 +52,8 @@ Choose maven ("Executes common Maven commands"). This creates a tasks.json file 
 Save the above changes and then open the Command Palette and select "Tasks: Run Build Task" then pick "compile" and then "Continue without scanning the task output". This invokes Maven, which creates a target folder at the same level as the src folder with the compiled class files in the target\classes folder.
 
 **Running app on Servlet Container using Visual Studio Code (Tomcat/Grizzly/Heroku):**
-    *Prerequisites:*
+
+    Prerequisites:
       - Servlet Container - Tomcat in this example 
       - Tomcat Extentsion for VS Code
           - Linux: sudo apt-get install tomcat8
@@ -63,7 +64,7 @@ Save the above changes and then open the Command Palette and select "Tasks: Run 
  
 **Steps to run app:**
 
-Point tomcat extention to libexec inside of tomcat folder ($TOMCAT_FOLDER/libexec) for mac otherwise on linux point it to $CATALINA_HOME
-Right click on generated war and click on Run on Tomcat Server as seen in the picture below
+    * Point tomcat extention to libexec inside of tomcat folder ($TOMCAT_FOLDER/libexec) for mac otherwise on linux point it to $CATALINA_HOME
+    * Right click on generated war and click on Run on Tomcat Server as seen in the picture below
 
 
