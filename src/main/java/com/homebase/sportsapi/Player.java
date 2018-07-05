@@ -1,9 +1,12 @@
 package com.homebase.sportsapi;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Player
  */
-public class Player {
+ @XmlRootElement
+ public class Player {
     private String firstName, lastName, position;
     private int age;
 
