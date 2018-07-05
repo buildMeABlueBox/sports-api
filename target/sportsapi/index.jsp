@@ -1,8 +1,8 @@
 <html>
 <body>
     <h2>Jersey RESTful Web Application!</h2>
-    <p><a href="webapi/myresource">Jersey resource</a>
-    <p>Visit <a href="http://jersey.java.net">Project Jersey website</a>
-    for more information on Jersey!
+    <p><a href="football/players">List Football Players</a>
+    <p><a href="basketball/players">List Basketball Players</a>
+    <p><a href="baseball/players">List Baseball Players</a>
 </body>
 </html>
