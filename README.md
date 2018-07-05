@@ -41,12 +41,12 @@ Choose maven ("Executes common Maven commands"). This creates a tasks.json file 
  
  
  
-{
-    "label": "compile",
-    "type": "shell",
-    "command": "mvn -B compile",
-    "group": "build"
-}
+    {
+        "label": "compile",
+        "type": "shell",
+        "command": "mvn -B compile",
+        "group": "build"
+    }
 
 
 Save the above changes and then open the Command Palette and select "Tasks: Run Build Task" then pick "compile" and then "Continue without scanning the task output". This invokes Maven, which creates a target folder at the same level as the src folder with the compiled class files in the target\classes folder.
