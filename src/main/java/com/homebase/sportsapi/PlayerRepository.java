@@ -6,6 +6,7 @@ import com.mongodb.client.MongoDatabase;
 
 import org.bson.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -37,11 +38,10 @@ public class PlayerRepository {
 		this.table = table;
 	}
 
-	public List<Player> getPlayers(){
+	public List<Player> getPlayerData(){
+        players = new ArrayList<Player>();
+        Player p1 = new Player("Carl", "Reed", "Quarterback", 23);
+        players.add(p1);
         return players;
     }
-
-    // public Player getPlayer(int id){
-    //     for(player a:)
-    // }
 }
