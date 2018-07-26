@@ -3,34 +3,7 @@
      see implementation details http://jersey.java.net/nonav/documentation/latest/jax-rs.html -->
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <servlet>
-        <servlet-name>football</servlet-name>
-        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-        <init-param>
-            <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>com.homebase.sportsapi</param-value>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
-        <servlet-name>basketball</servlet-name>
-        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-        <init-param>
-            <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>com.homebase.sportsapi</param-value>
-        </init-param>
-        <load-on-startup>2</load-on-startup>
-    </servlet>
-    <servlet>
-        <servlet-name>baseball</servlet-name>
-        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-        <init-param>
-            <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>com.homebase.sportsapi</param-value>
-        </init-param>
-        <load-on-startup>3</load-on-startup>
-    </servlet>
-    <servlet>
-        <servlet-name>football</servlet-name>
+        <servlet-name>sportHandler</servlet-name>
         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
         <init-param>
             <param-name>jersey.config.server.provider.packages</param-name>
@@ -39,15 +12,9 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>football</servlet-name>
+        <servlet-name>sportHandler</servlet-name>
         <url-pattern>/football/*</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>basketball</servlet-name>
         <url-pattern>/basketball/*</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>baseball</servlet-name>
         <url-pattern>/baseball/*</url-pattern>
     </servlet-mapping>
 </web-app>
