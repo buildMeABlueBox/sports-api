@@ -20,6 +20,11 @@
             "type": "shell",
             "command": "mvn -B compile",
             "group": "build"
+        },
+        {
+            "label": "maven clean install",
+            "type": "shell",
+            "command": "mvn clean install -f '/Users/abhijit_kamat/Tech/Java/sports-api/pom.xml'"
         }
     ]
 }
