@@ -18,7 +18,7 @@ import javax.ws.rs.core.UriInfo;
 public class PlayerResource {
 
     @GET //Whenever a get request is called on player path, it will call this method
-    @Produces(MediaType.APPLICATION_XML) //this method will return the data back in XML format
+    @Produces(MediaType.APPLICATION_JSON) //this method will return the data back in XML format
     public List<Player> getPlayers(@Context UriInfo uriDetails){
         String baseURI = uriDetails.getBaseUri().getPath();
         String sportResource = baseURI.split("/")[2];
