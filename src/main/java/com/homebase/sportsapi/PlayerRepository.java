@@ -1,7 +1,6 @@
 package com.homebase.sportsapi;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
