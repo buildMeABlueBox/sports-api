@@ -21,7 +21,7 @@ public class PlayerResource {
     @Produces(MediaType.APPLICATION_XML) //this method will return the data back in XML format
     public List<Player> getPlayers(@Context UriInfo uriDetails){
         String baseURI = uriDetails.getBaseUri().getPath();
-        String sportResource = baseURI.split("/")[1];
+        String sportResource = baseURI.split("/")[2];
         
         PlayerRepository sportRepo = new PlayerRepository(sportResource);
         return sportRepo.getPlayerData();

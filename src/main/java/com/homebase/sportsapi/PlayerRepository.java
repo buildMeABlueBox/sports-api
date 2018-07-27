@@ -1,7 +1,10 @@
 package com.homebase.sportsapi;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonParser;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
 import org.bson.Document;
@@ -21,7 +24,7 @@ public class PlayerRepository {
     public PlayerRepository(String sport){
         mongo = new MongoClient();
         database = mongo.getDatabase("sports");
-        setCollection(database.getCollection(sport));
+        collection = database.getCollection(sport);
     }
 
     /**
@@ -34,14 +37,23 @@ public class PlayerRepository {
 	/**
 	 * @param collection the collection to set
 	 */
-	public void setCollection(MongoCollection<Document> collection) {
-		this.collection = collection;
+	public void setCollection(String sport) {
+		this.collection = database.getCollection(sport);
 	}
 
 	public List<Player> getPlayerData(){
-        players = new ArrayList<Player>();
-        Player p1 = new Player("Carl", "Reed", "Quarterback", 23);
-        players.add(p1);
+        ArrayList<Player> players = new ArrayList<>();
+        MongoCursor<Document> cursor = collection.find().iterator();
+        try{
+            while(cursor.hasNext()){
+                String jsonString = cursor.next().toJson();
+                Gson g = new Gson();
+                Player p = g.fromJson(jsonString, Player.class);
+                players.add(p);
+            }
+        }finally{
+            cursor.close();
+        }
         return players;
     }
 }
