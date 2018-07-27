@@ -7,18 +7,20 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
  @XmlRootElement
  public class Player {
-    private String firstName, lastName, position;
-    private int age;
+    private String firstName, lastName, position, nameBrief;
+    private int age, id;
 
     public Player(){
 
     }
 
-    public Player(String firstName, String lastName, String position, int age){
+    public Player(String firstName, String lastName, String position, int age, String nameBrief, int id){
         this.firstName = firstName;
         this.lastName = lastName;
         this.position = position;
         this.age = age;
+        this.nameBrief = nameBrief;
+        this.id = id;
     }
 
     public String getFirstName(){
