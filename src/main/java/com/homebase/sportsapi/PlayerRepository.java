@@ -41,7 +41,8 @@ public class PlayerRepository {
 	}
 
 	public List<Player> getPlayerData(){
-        ArrayList<Player> players = new ArrayList<>();
+        if (players != null) return players;
+        players = new ArrayList<>();
         MongoCursor<Document> cursor = collection.find().iterator();
         try{
             while(cursor.hasNext()){
