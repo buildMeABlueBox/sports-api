@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  public class Player {
     private String firstName, lastName, position, nameBrief, id;
     private int age;
-    
+   
     public Player(){
 
     }
