@@ -1,7 +1,5 @@
 package com.homebase.sportsapi;
 
-import java.net.URI;
-import java.util.Arrays;
 import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
