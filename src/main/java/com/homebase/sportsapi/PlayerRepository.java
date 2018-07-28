@@ -1,7 +1,9 @@
 package com.homebase.sportsapi;
 
+import com.google.gson.Gson;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
 import org.bson.Document;
@@ -15,33 +17,42 @@ import java.util.List;
 public class PlayerRepository {
     private MongoClient mongo;
     private MongoDatabase database;
-	private MongoCollection<Document> table;
+	private MongoCollection<Document> collection;
     private List<Player> players;
 
     public PlayerRepository(String sport){
         mongo = new MongoClient();
         database = mongo.getDatabase("sports");
-        setTable(database.getCollection(sport));
+        collection = database.getCollection(sport);
     }
 
     /**
-	 * @return the table
+	 * @return the collection
 	 */
-	public MongoCollection<Document> getTable() {
-		return table;
+	public MongoCollection<Document> getCollection() {
+		return collection;
 	}
 
 	/**
-	 * @param table the table to set
+	 * @param collection the collection to set
 	 */
-	public void setTable(MongoCollection<Document> table) {
-		this.table = table;
+	public void setCollection(String sport) {
+		this.collection = database.getCollection(sport);
 	}
 
 	public List<Player> getPlayerData(){
-        players = new ArrayList<Player>();
-        Player p1 = new Player("Carl", "Reed", "Quarterback", 23);
-        players.add(p1);
+        ArrayList<Player> players = new ArrayList<>();
+        MongoCursor<Document> cursor = collection.find().iterator();
+        try{
+            while(cursor.hasNext()){
+                String jsonString = cursor.next().toJson();
+                Gson g = new Gson();
+                Player p = g.fromJson(jsonString, Player.class);
+                players.add(p);
+            }
+        }finally{
+            cursor.close();
+        }
         return players;
     }
 }

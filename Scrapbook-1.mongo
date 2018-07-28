@@ -1,0 +1,11 @@
+db.baseball.update({}, {$rename:{"first_name":"firstName"}},{multi:true})
+db.basketball.update({}, {$rename:{"first_name":"firstName"}},{multi:true})
+db.football.update({}, {$rename:{"first_name":"firstName"}},{multi:true})
+
+db.baseball.update({}, {$rename:{"last_name":"lastName"}},{multi:true})
+db.basketball.update({}, {$rename:{"last_name":"lastName"}},{multi:true})
+db.football.update({}, {$rename:{"last_name":"lastName"}},{multi:true})
+
+db.baseball.update({}, {$rename:{"name_brief":"nameBrief"}},{multi:true})
+db.basketball.update({}, {$rename:{"name_brief":"nameBrief"}},{multi:true})
+db.football.update({}, {$rename:{"name_brief":"nameBrief"}},{multi:true})
