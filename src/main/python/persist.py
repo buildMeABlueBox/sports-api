@@ -18,20 +18,20 @@ for sport in sports:
         if not utils.vars_exist(player): continue 
 
         player_info = {
-            'name_brief':   utils.get_name_brief(sport,player),
-            'first_name':   player['firstname'],
-            'last_name':    player['lastname'],
+            'nameBrief':   utils.get_name_brief(sport,player),
+            'firstName':   player['firstname'],
+            'lastName':    player['lastname'],
             'position':     player['position'],
             'age':          player['age'],
             'id':           player['id']
         }
 
         initial_position_info = {
-            'position_info': {
+            'positionInfo': {
                 'position': player['position'],
                 'players': 1,
-                'age_total': player['age'],
-                'avg_age' : player['age']
+                'ageTotal': player['age'],
+                'avgAge' : player['age']
             }
         }
 
