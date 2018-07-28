@@ -9,12 +9,12 @@ import javax.xml.bind.annotation.XmlRootElement;
  public class Player {
     private String firstName, lastName, position, nameBrief, id;
     private int age;
-
+   
     public Player(){
 
     }
 
-    public Player(String firstName, String lastName, String position, int age, String nameBrief, String id){
+	public Player(String firstName, String lastName, String position, int age, String nameBrief, String id){
         this.firstName = firstName;
         this.lastName = lastName;
         this.position = position;
@@ -54,4 +54,31 @@ import javax.xml.bind.annotation.XmlRootElement;
     public void setFirstName(String firstName){
         this.firstName = firstName;
     }
+        /**
+	 * @return the nameBrief
+	 */
+	public String getNameBrief() {
+		return nameBrief;
+	}
+
+	/**
+	 * @param nameBrief the nameBrief to set
+	 */
+	public void setNameBrief(String nameBrief) {
+		this.nameBrief = nameBrief;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
 }
