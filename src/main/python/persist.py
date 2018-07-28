@@ -18,26 +18,26 @@ for sport in sports:
         if not utils.vars_exist(player): continue 
 
         player_info = {
-            'name_brief':   utils.get_name_brief(sport,player),
-            'first_name':   player['firstname'],
-            'last_name':    player['lastname'],
+            'nameBrief':   utils.get_name_brief(sport,player),
+            'firstName':   player['firstname'],
+            'lastName':    player['lastname'],
             'position':     player['position'],
             'age':          player['age'],
             'id':           player['id']
         }
 
         initial_position_info = {
-            'position_info': {
+            'positionInfo': {
                 'position': player['position'],
                 'players': 1,
-                'age_total': player['age'],
-                'avg_age' : player['age']
+                'ageTotal': player['age'],
+                'avgAge' : player['age']
             }
         }
 
         utils.insert(collection, player_info, player_info) #insert player if they don't already exist
 
-        pos_query = {'position_info.position': player['position']}
+        pos_query = {'positionInfo.position': player['position']}
         pos_inserted = utils.insert(collection, initial_position_info, pos_query) #try inserting position info object
 
         if not pos_inserted: # position info object already exists in DB
